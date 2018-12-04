@@ -1,0 +1,72 @@
+.signika{
+   font-family: 'Signika', sans-serif;
+}
+
+.maven{
+   font-family: 'Maven Pro', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, span{
+   font-family: 'Maven Pro', sans-serif;
+}
+
+.search-bar-container{
+   min-height: 64px;
+}
+
+.category-margin{
+   margin-left: 12px;
+   margin-right: 12px;
+}
+
+.grid-normal{
+   margin-left: 0px;
+}
+
+.col-normal{
+   padding-left: 0px;
+}
+
+.col-padding{
+   padding: 12px;
+}
+
+.uk-card-body{
+   padding: 8px;
+}
+
+.item-card{
+   background: #CC2C1D;
+   border-radius: 18px;
+}
+
+.item-img{
+   border-top-left-radius: 18px;
+   border-top-right-radius: 18px;
+}
+
+.full-height{
+   height: 100vh;
+}
+
+.height-fill-parent{
+   height: 100%;
+}
+
+.form-label{
+   font-size: 12px;
+}
+
+.ws-card-title{
+   font-size: 14px;
+   font-weight: bold;
+   text-transform: uppercase;
+}
+
+.ws-round-button{
+   border-radius: 50px;
+}
+
+.ws-col-padding{
+   padding: 12px;
+}

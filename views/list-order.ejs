@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <title>List Order</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+   <link rel="icon" sizes="16x16" href="/public/img/Logokecil.png">
+   
+   <link href="https://fonts.googleapis.com/css?family=Maven+Pro|Signika" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+   <!-- UIkit CSS -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.24/css/uikit.min.css" />
+   <link rel="stylesheet" href="/public/css/style.css">
+</head>
+<body>
+   <div class="uk-flex uk-flex-center uk-flex-middle uk-width-1-1" style="min-height: 72px; background-color: white; padding: 12px; position: sticky; top: 0; z-index: 100;">
+      <div class="uk-text-center uk-width-1-1">
+         <a href="/" class="signika" style="font-size: 24px; color: white;">
+            <img src="/public/img/bel2sds.png" style="max-height: 72px;">
+         </a>
+      </div>
+   </div> 
+
+   <div class="uk-flex uk-flex-middle uk-flex-center search-bar-container">
+      <div class="uk-width-3-5">
+         <form action="/search" method="GET">
+            <div class="uk-inline uk-width-1-1">
+               <a class="uk-form-icon uk-form-icon-flip" type="submit">
+                  <i class="material-icons" style="color: #CC2C1D">filter_list</i>
+               </a>
+               <input class="uk-input" type="text" name="keyword" style="border-radius: 40px;" placeholder="masukkan kata kunci">
+            </div>
+         </form>
+      </div>
+   </div>
+
+   <div style="min-height: 42px; background: #EEEEEE;" class="uk-flex uk-flex-middle uk-flex-center">
+      <a href="/kategori/kecantikan" class="maven category-margin" style="color: #CC2C1D;">kecantikan</a>
+      <a href="/kategori/elektronik" class="maven category-margin" style="color: #CC2C1D;">elektronik</a>
+      <a href="/kategori/handphone" class="maven category-margin" style="color: #CC2C1D;">handphone</a>
+      <a href="/kategori/tablet" class="maven category-margin" style="color: #CC2C1D;">tablet</a>
+      <a href="/kategori/komputer" class="maven category-margin" style="color: #CC2C1D;">komputer</a>
+      <a href="/kategori/laptop" class="maven category-margin" style="color: #CC2C1D;">laptop</a>
+      <a href="/kategori/rumah tangga" class="maven category-margin" style="color: #CC2C1D;">rumah tangga</a>
+   </div>
+
+   <div class="uk-container" style="padding-top: 24px;">
+      <div class="uk-grid-match grid-normal uk-flex uk-flex-center" uk-grid>
+         <% list_item.forEach(function(item, index){ %>
+            <div class="uk-width-1-2@s uk-width-1-5@l col-normal col-padding">
+               <div class="uk-card uk-card-default uk-box-shadow-large item-card uk-height-1-1">
+                  <div class="uk-card-media-top">
+                     <img class="item-img" src="<%= item.produk.image %>" width="100%">
+                  </div>
+                  <div class="" style="margin-top: -42px;">
+                     <% if (item.vendor == 0) { %>
+                        <img src="/public/img/ic-blibli.png" style="max-height: 42px; padding: 2px;">   
+                     <% } %>
+                     <% if (item.vendor == 1) { %>
+                        <img src="/public/img/ic-bukalapak.png" style="max-height: 42px; padding: 2px;">   
+                     <% } %>
+                  </div>
+                  <div class="uk-card-body">
+                     <div class="uk-text-center">
+                        <h5 style="color: white; font-size: 12px"><%= item.produk.product_name %></h5>
+                        <span style="color: white;"><%= item.status %></span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         <% }) %>
+      </div>
+   </div>
+
+   <!-- UIkit JS -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.24/js/uikit.min.js"></script>
+</body>
+</html>

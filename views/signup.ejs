@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="utf-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <title>Signup</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+   <link rel="icon" sizes="16x16" href="/public/img/Logokecil.png">
+   
+   <link href="https://fonts.googleapis.com/css?family=Maven+Pro|Signika" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+   <!-- UIkit CSS -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.24/css/uikit.min.css" />
+   <link rel="stylesheet" href="/public/css/style.css">
+</head>
+
+<body>
+   <div class="grid-normal full-height" uk-grid>
+      <div class="uk-width-1-1@s uk-width-1-3@m col-normal" style="background: #586361;">
+         <div class="uk-flex uk-flex-center uk-flex-middle height-fill-parent">
+            <img src="/public/img/bel2sds.png" style="max-width: 50%;">
+         </div>
+      </div>
+
+      <div class="uk-width-1-1@s uk-width-2-3@m col-normal">
+         <div class="uk-flex uk-flex-center uk-flex-middle height-fill-parent" style="padding: 12px;">
+            <div class="uk-width-1-1@s uk-width-3-5@m" style="max-height: 80vh; overflow-y: scroll;">
+               <!-- alert -->
+               <% if (error) { %>
+                  <div class="uk-alert-danger" uk-alert>
+                     <a class="uk-alert-close" uk-close></a>
+                     <p><%= error %></p>
+                  </div>
+               <% } %>
+               <!-- end allert -->
+               <div class="uk-card uk-card-default">
+                  <div class="uk-card-body" style="padding: 42px;">
+                     <h5><b>SIGNUP USER</b></h5>
+                     <form method="POST" action="/signup">
+                        <div class="uk-margin">
+                           <span class="form-label"><b>NAMA</b></span>
+                           <input class="uk-input" type="text" placeholder="name" name="nama">
+                        </div>
+                        <div class="uk-margin">
+                           <span class="form-label"><b>ALAMAT</b></span>
+                           <input class="uk-input" type="text" placeholder="address" name="alamat">
+                        </div>
+                        <div class="uk-margin">
+                           <span class="form-label"><b>PHONE</b></span>
+                           <input class="uk-input" type="text" placeholder="phone" name="telepon">
+                        </div>
+                        <div class="uk-margin">
+                           <span class="form-label"><b>EMAIl</b></span>
+                           <input class="uk-input" type="email" placeholder="email" name="email">
+                        </div>
+                        <div class="uk-margin">
+                           <span class="form-label"><b>PASSWORD</b></span>
+                           <input class="uk-input" type="password" placeholder="password" name="password">
+                        </div>
+                        <div class="uk-flex uk-flex-center" style="margin-top: 42px;">
+                           <button class="uk-button uk-button-default" style="border-radius: 50px; background: #CC2C1D; color: white;" type="submit">signup</button>
+                        </div>
+                     </form>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   
+   <!-- UIkit JS -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.24/js/uikit.min.js"></script>
+</body>
+
+</html>
