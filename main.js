@@ -149,6 +149,7 @@ app.use(function(err, req, res, next){
    res.send(err.message);
 });
 
-app.listen(5011, function(req, res, next){
-   console.log('app ready di port 5011');
+app.listen(process.env.PORT || 5011, function(req, res, next){
+	var port = process.env.PORT || 5011;
+   console.log('app ready di port ' + port);
 })
