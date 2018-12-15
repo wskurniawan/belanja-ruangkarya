@@ -31,7 +31,7 @@ app.post('/signup', function(req, res, next){
 
 app.get('/login', function(req, res, next){
 	if(req.cookies.token){
-		//return res.redirect('/');
+		return res.redirect('/');
 	}
 
 	res.render('login', { error: req.query.error });
